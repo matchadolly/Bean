@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 🎀 On first boot:
+sudo raspi-config nonint do_boot_wait 1  # 🎀 Don't start until the SD is ready.
+sudo apt update && sudo apt full-upgrade -y
+
+# 🎀 Enable the interfaces:
+sudo raspi-config nonint do_i2c 0
+sudo raspi-config nonint do_spi 0
+sudo raspi-config nonint do_fft 0  # 🎀 Turns on the audio I2S overlay
+sudo reboot
+
+# 🎀 Set the Python environment
+sudo apt install -y python3-venv git
+python3 -m venv ~/bean-env
+echo 'source ~/bean-env/bin/activate' >> ~/.bashrc
+source ~/.bashrc
+pip install --upgrade pip wheel
+pip install openai elevenlabs gpiozero sounddevice rpi-rgb-led-matrix pillow
