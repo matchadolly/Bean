@@ -42,7 +42,7 @@ Raspberry Pi Imager | Flashes the SD card.
       5. Play sound when finished.
 2. Insert the SD card into your Pi. Connect the active cooler, then the HyperPixel screen. Connect the Pi to power. A green LED should light for ~20s when the kernel loads. The fan will be VERY loud and you may smell SMOKE and occasionally the LED will turn red but APPARENTLY this is normal. I think. Everything since has been fine. Then the LED idles and stays green and the wifi firmware is loaded.
 3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/24a24d0f58b4ea604729f6c7e5683276512e8c35/Initial%20setup%20configs).
-4. Connect to eduroam if you want! Personally I shall do that so I won't have to keep using my hotspot. [Code](https://github.com/matchadolly/Bean/blob/9903d74072f5c1adbb7c5babb92627f7f4545103/Connect%20to%20eduroam).
+4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/9903d74072f5c1adbb7c5babb92627f7f4545103/Connect%20to%20eduroam).
 5. Test to see whether the peripherals work. [Code](https://github.com/matchadolly/Bean/blob/e74847fb253be7dbcd22d8fc8ba5485866d700f9/Peripheral%20tests).
 ### 2.2 Planned project file structure
 	Bean/
