@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 🎀 ---------- Preferred method ----------
+# 🎀 ---------- Method 1 ----------
 
 # 🎀 Install dependencies.
 sudo apt install -y python3-pip libpython3-dev libdbus-1-dev python3-dbus network-manager build-essential
@@ -14,17 +14,17 @@ sudo mkdir -p /root/.config
 sudo python3 eduroam_UoC.py
 sudo nmcli connection up eduroam
 
-# 🎀 ---------- ONLY use this if all else fails use this cos manual cert paths can be fragile... ----------
+# 🎀 ---------- Method 2 ----------
 
-# 🎀 Manual control
-network={
-    ssid="eduroam"
-    key_mgmt=WPA-EAP
-    eap=TTLS
-    identity="abc123+pi2025@cam.ac.uk"
-    password="TOKEN_PASSWORD"
-    phase2="auth=PAP"
-    altsubject_match="DNS:radius01.wifi.cam.ac.uk"
-    ca_cert="/etc/ssl/certs/USERTrust_Root_CA.pem"
-}
-sudo wpa_cli reconfigure
+# 🎀 Setup.
+sudo nmcli connection add \
+   type wifi ifname wlan0 con-name eduroam ssid eduroam \
+   -- \
+   wifi-sec.key-mgmt wpa-eap 802-1x.eap ttls 802-1x.phase2-auth pap \
+   802-1x.identity "CRSID+DEVICE@cam.ac.uk" \
+   802-1x.password "TOKEN_PASSWORD" \
+   connection.autoconnect yes \
+   connection.autoconnect-priority 20
+
+# 🎀 Set "Preconfigured" to fallback.
+sudo nmcli connection modify preconfigured connection.autoconnect-priority 5
