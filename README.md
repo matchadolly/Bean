@@ -18,7 +18,7 @@ Component | Purpose
 [USB AMale-AFemale extension cables](https://www.amazon.co.uk/dp/B09LYRRQ91) |
 [JST PH2.0 connector cables](https://www.amazon.co.uk/dp/B091FHPN1X) |
 
-Test by powering on the Pi. Make sure that the matrix lights up, and that the mic and speaker play the ALSA test tone `speaker-test -t sine -f 440 -c1 -l1`.
+I used a Mac for the Imager etc.
 
 ### 1.2 Software and services
 Service | Purpose
@@ -30,9 +30,20 @@ Raspberry Pi Imager | Flashes the SD card.
 
 ## 2. The actual nitty gritty
 ### 2.1 Initial setup
-1. Flash Raspberry Pi OS Lite (64-bit, bookworm) with Pi Imager. In the advanced menu pre-set the Wifi SSID / password and enable SSH.
-2. Boot and set further configs ONLY after the SD is ready. [Code](https://github.com/matchadolly/Bean/blob/24a24d0f58b4ea604729f6c7e5683276512e8c35/Initial%20setup%20configs).
-3. Test to see whether the peripherals work. [Code](https://github.com/matchadolly/Bean/blob/e74847fb253be7dbcd22d8fc8ba5485866d700f9/Peripheral%20tests).
+1. Plug an SD card into your computer. Flash the Raspberry Pi OS with Pi Imager.
+   1. Raspberry Pi Device: Raspberry Pi 5.
+   2. Operating System: Raspberry Pi OS Lite (64-bit).
+   3. Storage: Choose your SD card.
+   4. OS Customisation:
+      1. Set hostname: bean.local
+      2. Set username and password: bean (username), bean (password).
+      3. Configure wireless LAN: enter your wifi's SSID and password.
+      4. Enable SSH, Use password authentication.
+      5. Play sound when finished.
+2. Insert the SD card into your Pi. Connect the active cooler, then the HyperPixel screen. Connect the Pi to power. A green LED should light for ~20s when the kernel loads. The fan will be VERY loud and you may smell SMOKE and occasionally the LED will turn red but APPARENTLY this is normal. I think. Everything since has been fine. Then the LED idles and stays green and the wifi firmware is loaded.
+3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/24a24d0f58b4ea604729f6c7e5683276512e8c35/Initial%20setup%20configs).
+4. Connect to eduroam if you want! Personally I shall do that so I won't have to keep using my hotspot. [Code](https://github.com/matchadolly/Bean/blob/9903d74072f5c1adbb7c5babb92627f7f4545103/Connect%20to%20eduroam).
+5. Test to see whether the peripherals work. [Code](https://github.com/matchadolly/Bean/blob/e74847fb253be7dbcd22d8fc8ba5485866d700f9/Peripheral%20tests).
 ### 2.2 Planned project file structure
 	Bean/
  		main.py
