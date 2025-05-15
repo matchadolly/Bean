@@ -1,13 +1,16 @@
 #!/bin/bash
 
-# 🎀 Run on first boot.
-sudo raspi-config nonint do_boot_wait 1  # 🎀 Don't start until the SD is ready.
-sudo apt update && sudo apt full-upgrade -y
+# 🎀  Get the IP address.
+ping bean.local  # 🎀 Note to self: 172.20.10.14
 
-# 🎀 Enable the interfaces.
+# 🎀 Log in with SSH.
+ssh bean@bean.local  # 🎀 or ssh bean@<IP-you-found>
+
+# 🎀 Run on first boot.
 sudo raspi-config nonint do_i2c 0
 sudo raspi-config nonint do_spi 0
-sudo raspi-config nonint do_fft 0  # 🎀 Turn on the audio I2S overlay.
+sudo raspi-config nonint do_boot_wait 0
+sudo apt update && sudo apt full-upgrade -y
 sudo reboot
 
 # 🎀 Set the Python environment.
@@ -16,4 +19,4 @@ python3 -m venv ~/bean-env
 echo 'source ~/bean-env/bin/activate' >> ~/.bashrc
 source ~/.bashrc
 pip install --upgrade pip wheel
-pip install openai elevenlabs gpiozero sounddevice rpi-rgb-led-matrix pillow
+pip install openai elevenlabs gpiozero sounddevice pillow
