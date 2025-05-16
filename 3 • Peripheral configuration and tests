@@ -3,14 +3,9 @@
 # 🎀 Access the config file.
 sudo nano /boot/firmware/config.txt
 
-# 🎀 Add these above any dtoverlay= lines.
-dtoverlay=vc4-kms-dpi-hyperpixel4sq,ctouch
-gpio=0-27=a2
-overscan_left=0
-
-# 🎀 Comment these lines in the file out.
-# dtparam=i2c_arm=off
-# dtoverlay=vc4-kms-dpi-hyperpixel4sq
+# 🎀 Edit the file.
+dtparam=i2c_arm=on  # 🎀 Change this from off to on.
+dtoverlay=vc4-kms-dpi-hyperpixel4sq,ctouch  # 🎀 Add ctouch to this line.
 
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
 sudo raspi-config nonint do_i2c 1
