@@ -103,3 +103,6 @@ Configure and test the peripherals. [Code](https://github.com/matchadolly/Bean/b
 ### 3.3
 1. Configure basic software stuff and connect to GitHub to sync files to a folder in your repo. [Code](https://github.com/matchadolly/Bean/blob/main/Software%20configs).
 2. Now all the project files can be edited in your folder in your GitHub repo! Mine is [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean).
+
+## 4. Current status
+I have connected to GitHub and am working on the actual codey stuff! You can see what's going on by checking the [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean) folder; it is synced with the Pi.
