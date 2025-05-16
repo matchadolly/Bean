@@ -80,7 +80,7 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
 - If the soil is critical, the bottom bar will display an alert and Turnip's replies will be filled with profanities and expletives. Turnip will also send you degrading messages (Telegram?) to remind you to water it.
 
 ## 3. The actual nitty gritty
-### 3.1 Initial setup
+### 3.1 Initial Pi setup
 1. Plug an SD card into your computer. Flash the Raspberry Pi OS with Pi Imager.
    1. Raspberry Pi Device: Raspberry Pi 5.
    2. Operating System: Raspberry Pi OS Lite (64-bit).
@@ -91,11 +91,20 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
       3. Configure wireless LAN: enter your wifi's SSID and password.
       4. Enable SSH, Use password authentication.
       5. Play sound when finished.
-2. Insert the SD card into your Pi. Connect the active cooler, then the HyperPixel screen. Connect the Pi to power. A green LED should light for ~20s when the kernel loads. The fan will be VERY loud and you may smell SMOKE and occasionally the LED will turn red but APPARENTLY this is normal. I think. Everything since has been fine. Then the LED idles and stays green and the wifi firmware is loaded.
+2. Insert the SD card into your Pi. Connect the active cooler. Connect the Pi to power. A green LED should light for ~20s when the kernel loads. The fan will be VERY loud and you may smell SMOKE and occasionally the LED will turn red but APPARENTLY this is normal. I think. Everything since has been fine. Then the LED idles and stays green and the wifi firmware is loaded.
 3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/main/Initial%20setup%20configs).
 4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/Connect%20to%20eduroam).
-5. Test to see whether the peripherals work. [Code](https://github.com/matchadolly/Bean/blob/main/Peripheral%20tests).
-### 3.2 Planned project file structure
+### 3.2 Putting the components together
+#### Stuff to be careful about lol #OSHACompliant
+Power down and unplug your Pi every time you add or remove hardware, cos hot-plugging stuff like the headers and GPIO wires can kill the Pi, or so I have heard. I am certainly not going to test this out.
+#### Physical assembly
+1. You should have inserted the SD card into your Pi and attached the active cooler by now.
+1. HyperPixel: HyperPixel → header, standoffs → Pi, HyperPixel+Header → Pi.
+2. USB microphone → blue USB-3 port.
+3. Waveshare USB sound card 
+
+Test to see whether the peripherals work. [Code](https://github.com/matchadolly/Bean/blob/main/Peripheral%20tests).
+### 3.3 Planned project file structure
 	Bean/
  		main.py
 	 	settings.json  # 🎀 Can be edited by user.
