@@ -1,0 +1,95 @@
+# 🎀 ---------- Create project diectory ----------
+
+cd ~
+mkdir -p ~/bean/{audio,vision/faces,chat,hardware,utils,service}
+touch ~/bean/{audio,vision,chat,hardware,utils}/__init__.py
+touch ~/bean/main.py  # 🎀 Root entry point.
+touch ~/bean/chat/{memory.txt,chatlogic.py}  # 🎀 Chat.
+touch ~/bean/audio/{record.py,tts.py}  # 🎀 Audio.
+touch ~/bean/vision/display.py  # 🎀 Display.
+touch ~/bean/hardware/button.py  # 🎀 Hardware helpers.
+touch ~/bean/utils/{config.py,logger.py}   # 🎀 Generic helpers.
+touch ~/bean/service/bean.service  # 🎀 Future systemd service file.
+
+# 🎀 ---------- Save your keys ----------
+
+# 🎀 Create .env file inside the project root.
+cd ~/bean
+nano .env
+
+# 🎀 Inside nano add your keys.
+OPENAI_API_KEY="KEY"
+ELEVENLABS_API_KEY="KEY"
+
+# 🎀 Stop Git from committing the keys lol.
+echo -e "\n# Bean secrets\n.env" >> ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+
+# 🎀 Check if your keys are present. Once you run these it should print the first 8 characters of your keys.
+python - <<'PY'
+from os import getenv
+from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv(Path.home() / "bean" / ".env")
+print("OpenAI key starts with:", getenv("OPENAI_API_KEY")[:8])
+print("ElevenLabs key starts with:", getenv("ELEVENLABS_API_KEY")[:8])
+PY
+
+# 🎀 Make keys available to systemd service cos it doesn't read .bashrc.
+sudo mkdir -p /etc/systemd/system/bean.service.d  # 🎀 Create a drop-in directory.
+sudo nano /etc/systemd/system/bean.service.d/env.conf # 🎀 Add an environment directive.
+
+# 🎀 Inside nano add this.
+[Service]
+EnvironmentFile=/home/bean/bean/.env
+
+# 🎀 Reload.
+sudo systemctl daemon-reload
+
+# 🎀 ---------- Connect to GitHub ----------
+
+# 🎀 Generate SSH keys.
+ssh-keygen -t ed25519 -C "me@bean"  # 🎀 Add this to your SSH keys on GitHub.
+
+# 🎀 Stop Git from committing the keys.
+echo -e '\n# SSH keys\n**/.ssh/\n**/id_*' >> ~/.gitignore_global
+
+# 🎀 Clone your repo onto your Pi.
+sudo apt update && sudo apt install git
+cd /home/bean
+git clone git@github.com:USERNAME/REPO.git
+cd REPO
+
+# 🎀 Make a dedicated folder in the repo and copy everything except the repo itself into the folder.
+mkdir -p RaspberryBean
+rsync -av --progress \
+      /home/bean/bean/  RaspberryBean/
+
+# 🎀 Delete the originals ONLY when you have verified the copy.
+rm -r /home/bean/bean/
+
+# 🎀 Set your identify.
+git config --global user.email "EMAIL"
+git config --global user.name "NAME"
+
+# 🎀 Push to GitHub.
+git add RaspberryBean
+git status
+git commit -m "Added RaspberryBean"
+git push -u origin main
+
+# 🎀 ---------- Working with GitHub ----------
+
+# 🎀 Pull changes from GitHub to the Pi (only if there are no un-pushed commits; safer).
+cd ~/Bean
+git pull --ff-only
+
+# 🎀 Pull changes from GitHub to the Pi (discards local edits and matches GitHub exactly).
+cd ~/Bean
+git fetch origin main && git reset --hard origin/main
+
+# 🎀 Push changes from the Pi to GitHub.
+cd ~/Bean
+git add -A
+git commit -m "MESSAGE"
+git push
