@@ -26,7 +26,7 @@ Raspberry Pi Imager | Flashes the SD card.
 
 ## Plan
 Bean will be a plushie with an animated face displayed by a HyperPixel screen, and an audio I/O system.
-### Basic stuff I have to do first
+### Basic stuff I am going to do first
 #### Speaking to Bean
 - You can talk to Bean by pushing a button on the screen.
 - What you say will be converted to text by OpenAI's Whisper (or Google Chirp).
@@ -105,4 +105,5 @@ Configure and test the peripherals. [Code](https://github.com/matchadolly/Bean/b
 2. Now all the project files can be edited in your folder in your GitHub repo! Mine is [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean).
 
 ## 4. Current status
-I have connected to GitHub and am working on the actual codey stuff! You can see what's going on by checking the [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean) folder; it is synced with the Pi.
+- I have connected to GitHub and am working on the actual codey stuff! You can see what's going on by checking the [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean) folder; it is synced with the Pi.
+- Right now I'm going to get the basic logic for each section down. Some stuff are still placeholders and may not do anything yet.
