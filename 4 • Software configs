@@ -18,7 +18,7 @@ touch ~/bean/audio/stt.py # 🎀 Audio STT.
 # 🎀 ---------- 2. Save your keys ----------
 
 # 🎀 Create .env file inside the project root.
-cd ~/bean
+cd ~
 nano .env
 
 # 🎀 Inside nano add your keys.
