@@ -1,7 +1,7 @@
-# 🎀 The first two blocks below will write files in /home/bean/bean/
-# 🎀 If you use GitHub, the method used here to connect will move the files. Your new path will be /home/bean/Bean/RaspberryBean/
+# 🎀 ---------- Create project diectory ----------
 
-# 🎀 ---------- 1. Create project diectory ----------
+# 🎀 This block will write files in /home/bean/bean/, if you aren't using GitHub, use this as your project directory.
+# 🎀 If you use GitHub, just clone the repo and use that as the directory.
 
 cd ~
 mkdir -p ~/bean/{audio,vision/faces,chat,hardware,utils,service}
@@ -15,7 +15,7 @@ touch ~/bean/utils/{config.py,logger.py}   # 🎀 Generic helpers.
 touch ~/bean/service/bean.service  # 🎀 Future systemd service file.
 touch ~/bean/audio/stt.py # 🎀 Audio STT.
 
-# 🎀 ---------- 2. Save your keys ----------
+# 🎀 ---------- Save your keys ----------
 
 # 🎀 Create .env file inside the project root.
 cd ~
@@ -60,9 +60,17 @@ echo -e '\n# SSH keys\n**/.ssh/\n**/id_*' >> ~/.gitignore_global
 
 # 🎀 Clone your repo onto your Pi.
 sudo apt update && sudo apt install git
-cd /home/bean
+cd ~
 git clone git@github.com:USERNAME/REPO.git
 cd REPO
+
+# 🎀 Set your identify.
+git config --global user.email "EMAIL"
+git config --global user.name "NAME"
+
+# 🎀 ---------- Initalise GitHub repo ----------
+
+# 🎀 Only use this block if the repo you cloned doesn't already have a folder acting as your project directory.
 
 # 🎀 Make a dedicated folder in the repo and copy everything except the repo itself into the folder.
 mkdir -p RaspberryBean
@@ -71,10 +79,6 @@ rsync -av --progress \
 
 # 🎀 Delete the originals ONLY when you have verified the copy.
 rm -r /home/bean/bean/
-
-# 🎀 Set your identify.
-git config --global user.email "EMAIL"
-git config --global user.name "NAME"
 
 # 🎀 Push to GitHub.
 git add RaspberryBean
