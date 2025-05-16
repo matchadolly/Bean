@@ -11,6 +11,7 @@ from audio.tts import speak
 from chat.chatlogic import chat
 from vision.display import show_gif
 from hardware.button import on_press
+from audio.stt import transcribe
 import tempfile
 
 STATE = "IDLE"
@@ -23,6 +24,8 @@ def handle_press():
     show_gif("vision/faces/neutral_talk.gif")
     tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
     record_to_file(tmp.name, seconds=5)
+    text = transcribe(tmp.name)
+    reply = chat(text)["reply"]  
     STATE = "THINKING"
     reply = chat(open(tmp.name, "rb").name)["reply"]
     STATE = "SPEAKING"
