@@ -4,7 +4,7 @@
 sudo nano /boot/firmware/config.txt
 
 # 🎀 Edit the file.
-dtparam=i2c_arm=on  # 🎀 Change this from off to on.
+dtparam=i2c_arm=off  # 🎀 Make sure this is off.
 dtoverlay=vc4-kms-dpi-hyperpixel4sq,ctouch  # 🎀 Add ctouch to this line. Move the whole # HyperPixel 4.0 square block to the very top.
 
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
