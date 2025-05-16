@@ -95,5 +95,5 @@ git fetch origin main && git reset --hard origin/main
 # 🎀 Push changes from the Pi to GitHub.
 cd ~/Bean
 git add -A
-git commit -m "MESSAGE"
+git commit -m "Pushed from RaspberryBean"
 git push
