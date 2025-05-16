@@ -13,6 +13,8 @@ touch ~/bean/vision/display.py  # 🎀 Display.
 touch ~/bean/hardware/button.py  # 🎀 Hardware helpers.
 touch ~/bean/utils/{config.py,logger.py}   # 🎀 Generic helpers.
 touch ~/bean/service/bean.service  # 🎀 Future systemd service file.
+touch ~/bean/audio/stt.py # 🎀 Audio STT.
+nano  ~/bean/audio/stt.py
 
 # 🎀 ---------- 2. Save your keys ----------
 
