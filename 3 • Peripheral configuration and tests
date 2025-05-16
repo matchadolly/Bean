@@ -3,15 +3,14 @@
 # 🎀 Access the config file.
 sudo nano /boot/firmware/config.txt
 
-# 🎀 Make sure the top section under the "For more options" block looks exactly like this. Remove all other HyperPixel line and block you find.
+# 🎀 Make sure the top section under the "For more options" block looks exactly like this.
 # 🎀🎀🎀🎀🎀🎀🎀🎀🎀🎀
-# HyperPixel 4.0 square
-dtoverlay=vc4-kms-dpi-hyperpixel4sq
+dtoverlay=vc4-kms-dpi-hyperpixel4
 
 # Uncomment some or all of these to enable the optional hardware interfaces
-dtparam=i2c_arm=off
+#dtparam=i2c_arm=on
 #dtparam=i2s=on
-dtparam=spi=off
+#dtparam=spi=on
 # 🎀🎀🎀🎀🎀🎀🎀🎀🎀🎀
 
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
