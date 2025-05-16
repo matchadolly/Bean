@@ -1,0 +1,29 @@
+# 🎀 ---------- Display ----------
+
+# 🎀 Access the config file.
+sudo nano /boot/firmware/config.txt
+
+# 🎀 Add these above any dtoverlay= lines.
+dtoverlay=vc4-kms-dpi-hyperpixel4sq
+gpio=0-27=a2
+overscan_left=0
+
+# 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
+sudo raspi-config nonint do_i2c 1
+sudo raspi-config nonint do_spi 1
+sudo reboot
+
+# 🎀 If everything works you'll see the kernel text on the screen. Yay!
+
+# 🎀 ---------- Sound ----------
+
+# 🎀 Speaker: Play ALSA's WAV sample once.
+speaker-test -t wav -c1
+
+# 🎀 Microphone: List all audio devices ALSA can see, then record and play back 5s of audio.
+python -m sounddevice --list-devices
+arecord -d 5 -r 16000 -f S16_LE test.wav && aplay test.wav
+
+# 🎀 Tidying up: Delete the recording, then leave the venv.
+rm -f test.wav
+deactivate
