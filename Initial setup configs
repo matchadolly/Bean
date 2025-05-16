@@ -19,4 +19,4 @@ python3 -m venv ~/bean-env
 echo 'source ~/bean-env/bin/activate' >> ~/.bashrc
 source ~/.bashrc
 pip install --upgrade pip wheel
-pip install openai elevenlabs gpiozero sounddevice pillow
+pip install openai elevenlabs gpiozero sounddevice pillow python-dotenv
