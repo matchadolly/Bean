@@ -91,17 +91,17 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
       4. Enable SSH, Use password authentication.
       5. Play sound when finished.
 2. Insert the SD card into your Pi. Connect the active cooler. Connect the Pi to power. A green LED should light for ~20s when the kernel loads. The fan will be VERY loud and you may smell SMOKE and occasionally the LED will turn red but APPARENTLY this is normal. I think. Everything since has been fine. Then the LED idles and stays green and the wifi firmware is loaded.
-3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/main/Initial%20setup%20configs).
-4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/Connect%20to%20eduroam).
+3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/main/1%20%E2%80%A2%20Initial%20setup%20configs).
+4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/2%20%E2%80%A2%20Connect%20to%20eduroam).
 ### 3.2 Putting the components together
 1. You should have inserted the SD card into your Pi and attached the active cooler by now.
 2. HyperPixel: HyperPixel → header, standoffs → Pi, HyperPixel+Header → Pi.
 3. USB microphone → Pi's blue USB-3 port.
 4. Waveshare USB sound card → USB AMale-AFemale extension → Pi's blue USB-3 port.
 5. ⭐ Mini USB Speaker → Pi's blue USB-3 port.
-Configure and test the peripherals. [Code](https://github.com/matchadolly/Bean/blob/main/Peripheral%20configuration%20and%20tests).
+Configure and test the peripherals. [Code](https://github.com/matchadolly/Bean/blob/main/3%20%E2%80%A2%20Peripheral%20configuration%20and%20tests).
 ### 3.3
-1. Configure basic software stuff and connect to GitHub to sync files to a folder in your repo. [Code](https://github.com/matchadolly/Bean/blob/main/Software%20configs).
+1. Configure basic software stuff and connect to GitHub to sync files to a folder in your repo. [Code](https://github.com/matchadolly/Bean/blob/main/4%20%E2%80%A2%20Software%20configs).
 2. Now all the project files can be edited in your folder in your GitHub repo! Mine is [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean).
 
 ## 4. Current status
