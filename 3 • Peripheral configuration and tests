@@ -17,6 +17,7 @@ dtparam=spi=off
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
 sudo raspi-config nonint do_i2c 1
 sudo raspi-config nonint do_spi 1
+sudo systemctl disable --now hyperpixel4-init.service 2>/dev/null || true  # 🎀 This is the legacy service.
 sudo reboot
 
 # 🎀 If everything works you'll see the kernel text on the screen. Yay!
