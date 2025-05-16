@@ -1,6 +1,6 @@
 """
 🎀
-Loads environment variables on first import.
+Load environment variables on first import.
 🎀
 """
 from pathlib import Path
