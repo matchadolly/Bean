@@ -11,9 +11,8 @@ Mac | For SSH-ing into Bean.
 [SanDisk 32 GB memory card](https://www.amazon.co.uk/dp/B06XYHN68L) | Storage
 [Pimoroni HyperPixel 4.0 Square Touch](https://www.amazon.co.uk/dp/B07V9K54WV) | Display
 [Mini USB microphone](https://www.amazon.co.uk/dp/B0DCZ9M6RV) | Audio in
-[Adafruit STEMMA speaker & audio amplifier](https://www.amazon.co.uk/dp/B082MNXJG5) | Audio out
-[Waveshare USB sound card (external audio converter)](https://www.amazon.co.uk/dp/B08R38TXXL) | Audio out
-(Not purchased yet) Momentary push-button | Speak and menu buttons
+[Mini USB Speaker](https://www.amazon.co.uk/gp/product/B006RBSHAQ) | Audio out
+(Not purchased yet) Power bank (Anker Nano Power Bank A1653 5000 mAh, 5V 3A PD out) |
 [Adafruit female-female jumper wires (75mm)](https://www.amazon.co.uk/dp/B071YNFGBR) | Connector
 [USB AMale-AFemale extension cables](https://www.amazon.co.uk/dp/B09LYRRQ91) | Connector
 [JST PH2.0 connector cables](https://www.amazon.co.uk/dp/B091FHPN1X) | Connector
@@ -95,24 +94,12 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
 3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/main/Initial%20setup%20configs).
 4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/Connect%20to%20eduroam).
 ### 3.2 Putting the components together
-#### Stuff to be careful about lol #OSHACompliant
-Power down and unplug your Pi every time you add or remove hardware, cos hot-plugging stuff like the headers and GPIO wires can kill the Pi, or so I have heard. I am certainly not going to test this out.
-#### Physical assembly
 1. You should have inserted the SD card into your Pi and attached the active cooler by now.
-1. HyperPixel: HyperPixel → header, standoffs → Pi, HyperPixel+Header → Pi.
-2. USB microphone → blue USB-3 port.
-3. Waveshare USB sound card 
-
-Test to see whether the peripherals work. [Code](https://github.com/matchadolly/Bean/blob/main/Peripheral%20tests).
-### 3.3 Planned project file structure
-	Bean/
- 		main.py
-	 	settings.json  # 🎀 Can be edited by user.
-	 	memory.txt  # 🎀 One fact per line.
-	 	faces/  # 🎀 PNG frames for each mood. Could use MP4 or GIF instead?
-	 		happy_0.png
-			happy_1.png
-	 	systemd/bean.service
-Create the directories `mkdir -p ~/bean/{faces,systemd}`
-### 3.3 Core loop (python skeleton)
-NOT the full code, just the very basic logic. [Code](https://github.com/matchadolly/Bean/blob/main/Main.py)
+2. HyperPixel: HyperPixel → header, standoffs → Pi, HyperPixel+Header → Pi.
+3. USB microphone → Pi's blue USB-3 port.
+4. Waveshare USB sound card → USB AMale-AFemale extension → Pi's blue USB-3 port.
+5. ⭐ Mini USB Speaker → Pi's blue USB-3 port.
+Configure and test the peripherals. [Code](https://github.com/matchadolly/Bean/blob/main/Peripheral%20configuration%20and%20tests).
+### 3.3
+1. Configure basic software stuff and connect to GitHub to sync files to a folder in your repo. [Code](https://github.com/matchadolly/Bean/blob/main/Software%20configs).
+2. Now all the project files can be edited in your folder in your GitHub repo! Mine is [RaspberryBean](https://github.com/matchadolly/Bean/tree/main/RaspberryBean).
