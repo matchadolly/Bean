@@ -95,7 +95,7 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
 4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/2%20%E2%80%A2%20Connect%20to%20eduroam).
 ### 3.2 Putting the components together
 1. You should have inserted the SD card into your Pi and attached the active cooler by now.
-2. HyperPixel: HyperPixel → header, standoffs → Pi, HyperPixel+Header → Pi.
+2. HyperPixel: HyperPixel → header, standoffs → Hyperpixel, HyperPixel+header+standoffs → Pi.
 3. USB microphone → Pi's blue USB-3 port.
 4. Waveshare USB sound card → USB AMale-AFemale extension → Pi's blue USB-3 port.
 5. Mini USB Speaker → Pi's blue USB-3 port.
