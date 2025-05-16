@@ -98,7 +98,7 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
 2. HyperPixel: HyperPixel → header, standoffs → Pi, HyperPixel+Header → Pi.
 3. USB microphone → Pi's blue USB-3 port.
 4. Waveshare USB sound card → USB AMale-AFemale extension → Pi's blue USB-3 port.
-5. ⭐ Mini USB Speaker → Pi's blue USB-3 port.
+5. Mini USB Speaker → Pi's blue USB-3 port.
 Configure and test the peripherals. [Code](https://github.com/matchadolly/Bean/blob/main/3%20%E2%80%A2%20Peripheral%20configuration%20and%20tests).
 ### 3.3
 1. Configure basic software stuff and connect to GitHub to sync files to a folder in your repo. [Code](https://github.com/matchadolly/Bean/blob/main/4%20%E2%80%A2%20Software%20configs).
