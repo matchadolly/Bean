@@ -14,7 +14,7 @@ sudo apt update && sudo apt full-upgrade -y
 sudo reboot
 
 # 🎀 Set the Python environment.
-sudo apt install -y python3-venv git python3-dev libevdev-dev
+sudo apt install -y python3-venv git python3-dev libevdev-dev portaudio19-dev
 python3 -m venv ~/bean-env
 echo 'source ~/bean-env/bin/activate' >> ~/.bashrc
 source ~/.bashrc
