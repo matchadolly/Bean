@@ -8,8 +8,9 @@ dtoverlay=vc4-kms-dpi-hyperpixel4sq,ctouch
 gpio=0-27=a2
 overscan_left=0
 
-# 🎀 Comment this line in the file out.
+# 🎀 Comment these lines in the file out.
 # dtparam=i2c_arm=off
+# dtoverlay=vc4-kms-dpi-hyperpixel4sq
 
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
 sudo raspi-config nonint do_i2c 1
