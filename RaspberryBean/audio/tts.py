@@ -1,6 +1,6 @@
 """
 🎀
-ElevenLabs TTS.
+ElevenLabs' TTS.
 🎀
 """
 from elevenlabs import generate, play, set_api_key
