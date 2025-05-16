@@ -1,4 +1,7 @@
-# 🎀 ---------- Create project diectory ----------
+# 🎀 The first two blocks below will write files in /home/bean/bean/
+# 🎀 If you use GitHub, the method used here to connect will move the files. Your new path will be /home/bean/Bean/RaspberryBean/
+
+# 🎀 ---------- 1. Create project diectory ----------
 
 cd ~
 mkdir -p ~/bean/{audio,vision/faces,chat,hardware,utils,service}
@@ -11,7 +14,7 @@ touch ~/bean/hardware/button.py  # 🎀 Hardware helpers.
 touch ~/bean/utils/{config.py,logger.py}   # 🎀 Generic helpers.
 touch ~/bean/service/bean.service  # 🎀 Future systemd service file.
 
-# 🎀 ---------- Save your keys ----------
+# 🎀 ---------- 2. Save your keys ----------
 
 # 🎀 Create .env file inside the project root.
 cd ~/bean
