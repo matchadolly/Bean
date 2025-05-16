@@ -1,17 +1,8 @@
 # 🎀 ---------- Display ----------
 
 # 🎀 Access the config file.
+# 🎀 Edit the config file so that it matches exactly this: https://github.com/matchadolly/Bean/blob/main/config.txt
 sudo nano /boot/firmware/config.txt
-
-# 🎀 Make sure the top section under the "For more options" block looks exactly like this.
-# 🎀🎀🎀🎀🎀🎀🎀🎀🎀🎀
-dtoverlay=vc4-kms-dpi-hyperpixel4
-
-# Uncomment some or all of these to enable the optional hardware interfaces
-#dtparam=i2c_arm=on
-#dtparam=i2s=on
-#dtparam=spi=on
-# 🎀🎀🎀🎀🎀🎀🎀🎀🎀🎀
 
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
 sudo raspi-config nonint do_i2c 1
