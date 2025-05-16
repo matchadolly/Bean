@@ -45,7 +45,7 @@ sudo nano /etc/systemd/system/bean.service.d/env.conf # 🎀 Add an environment 
 
 # 🎀 Inside nano add this.
 [Service]
-EnvironmentFile=/home/bean/bean/.env
+EnvironmentFile=/home/bean/.env
 
 # 🎀 Reload.
 sudo systemctl daemon-reload
