@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 🎀  Get the IP address.
-ping bean.local  # 🎀 Note to self: 172.20.10.14
+ping bean.local
 
 # 🎀 Log in with SSH.
-ssh bean@bean.local  # 🎀 or ssh bean@<IP-you-found>
+ssh bean@bean.local  # ☁️ Or ssh bean@<IP-address>
 
 # 🎀 Run on first boot.
 sudo raspi-config nonint do_i2c 0
@@ -14,7 +14,7 @@ sudo apt update && sudo apt full-upgrade -y
 sudo reboot
 
 # 🎀 Set the Python environment.
-sudo apt install -y python3-venv git python3-dev libevdev-dev portaudio19-dev
+sudo apt install -y python3-venv git python3-dev libevdev-dev portaudio19-dev dhcpcd5 matchbox-keyboard
 python3 -m venv ~/bean-env
 echo 'source ~/bean-env/bin/activate' >> ~/.bashrc
 source ~/.bashrc

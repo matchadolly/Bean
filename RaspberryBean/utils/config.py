@@ -1,7 +1,7 @@
 """
-🎀
+🎀🎀
 Load environment variables on first import.
-🎀
+🎀🎀
 """
 from pathlib import Path
 from dotenv import load_dotenv

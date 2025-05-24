@@ -1,7 +1,7 @@
 """
-🎀
+🎀🎀
 ElevenLabs' TTS.
-🎀
+🎀🎀
 """
 from elevenlabs import generate, play, set_api_key
 from utils.logger import log
@@ -15,3 +15,4 @@ def speak(text: str) -> None:
     log.info("Generating speech (%s chars)", len(text))
     audio = generate(text=text, voice=VOICE_ID, stream=True)
     play(audio)
+    

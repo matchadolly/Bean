@@ -1,21 +1,23 @@
-# 🎀 ---------- Create project diectory ----------
+#!/bin/bash
+
+# 🎀🎀 ---------- Create project diectory ---------- 🎀🎀
 
 # 🎀 This block will write files in /home/bean/bean/, if you aren't using GitHub, use this as your project directory.
-# 🎀 If you use GitHub, just clone the repo and use that as the directory.
+# ☁️ If you use GitHub, just clone the repo and use that as the directory.
 
 cd ~
 mkdir -p ~/bean/{audio,vision/faces,chat,hardware,utils,service}
 touch ~/bean/{audio,vision,chat,hardware,utils}/__init__.py
-touch ~/bean/main.py  # 🎀 Root entry point.
-touch ~/bean/chat/{memory.txt,chatlogic.py}  # 🎀 Chat.
-touch ~/bean/audio/{record.py,tts.py}  # 🎀 Audio.
-touch ~/bean/vision/display.py  # 🎀 Display.
-touch ~/bean/hardware/button.py  # 🎀 Hardware helpers.
-touch ~/bean/utils/{config.py,logger.py}   # 🎀 Generic helpers.
-touch ~/bean/service/bean.service  # 🎀 Future systemd service file.
-touch ~/bean/audio/stt.py # 🎀 Audio STT.
+touch ~/bean/main.py  # ☁️ Root entry point.
+touch ~/bean/chat/{memory.txt,chatlogic.py}  # ☁️ Chat.
+touch ~/bean/audio/{record.py,tts.py}  # ☁️ Audio.
+touch ~/bean/vision/display.py  # ☁️ Display.
+touch ~/bean/hardware/button.py  # ☁️ Hardware helpers.
+touch ~/bean/utils/{config.py,logger.py}   # ☁️ Generic helpers.
+touch ~/bean/service/bean.service  # ☁️ Future systemd service file.
+touch ~/bean/audio/stt.py # ☁️ Audio STT.
 
-# 🎀 ---------- Save your keys ----------
+# 🎀🎀 ---------- Save your keys ---------- 🎀🎀
 
 # 🎀 Create .env file inside the project root.
 cd ~
@@ -40,8 +42,8 @@ print("ElevenLabs key starts with:", getenv("ELEVENLABS_API_KEY")[:8])
 PY
 
 # 🎀 Make keys available to systemd service cos it doesn't read .bashrc.
-sudo mkdir -p /etc/systemd/system/bean.service.d  # 🎀 Create a drop-in directory.
-sudo nano /etc/systemd/system/bean.service.d/env.conf # 🎀 Add an environment directive.
+sudo mkdir -p /etc/systemd/system/bean.service.d  # ☁️ Create a drop-in directory.
+sudo nano /etc/systemd/system/bean.service.d/env.conf # ☁️ Add an environment directive.
 
 # 🎀 Inside nano add this.
 [Service]
@@ -50,10 +52,10 @@ EnvironmentFile=/home/bean/.env
 # 🎀 Reload.
 sudo systemctl daemon-reload
 
-# 🎀 ---------- Connect to GitHub ----------
+# 🎀🎀 ---------- Connect to GitHub ---------- 🎀🎀
 
 # 🎀 Generate SSH keys.
-ssh-keygen -t ed25519 -C "me@bean"  # 🎀 Add this to your SSH keys on GitHub.
+ssh-keygen -t ed25519 -C "me@bean"  # ☁️ Add this to your SSH keys on GitHub.
 
 # 🎀 Stop Git from committing the keys.
 echo -e '\n# SSH keys\n**/.ssh/\n**/id_*' >> ~/.gitignore_global
@@ -68,7 +70,7 @@ cd REPO
 git config --global user.email "EMAIL"
 git config --global user.name "NAME"
 
-# 🎀 ---------- Initalise GitHub repo ----------
+# 🎀🎀 ---------- Initalise GitHub repo ---------- 🎀🎀
 
 # 🎀 Only use this block if the repo you cloned doesn't already have a folder acting as your project directory.
 
@@ -86,7 +88,7 @@ git status
 git commit -m "Added RaspberryBean"
 git push -u origin main
 
-# 🎀 ---------- Working with GitHub ----------
+# 🎀🎀 ---------- Working with GitHub ---------- 🎀🎀
 
 # 🎀 Pull changes from GitHub to the Pi (only if there are no un-pushed commits; safer).
 cd ~/Bean
@@ -101,3 +103,6 @@ cd ~/Bean
 git add -A
 git commit -m "Pushed from RaspberryBean"
 git push
+
+# 🎀 Copy changes from a file on the Pi to a file in the repo (e.g. the config file). Put the path to the source file first, and target file after.
+cp -f /boot/firmware/config.txt /home/bean/Bean/RaspberryBean/config.txt

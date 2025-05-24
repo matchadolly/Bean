@@ -1,7 +1,9 @@
-# 🎀 ---------- Display ----------
+#!/bin/bash
+
+# 🎀🎀 ---------- Display ---------- 🎀🎀
 
 # 🎀 Access the config file.
-# 🎀 Edit the config file so that it matches exactly this: https://github.com/matchadolly/Bean/blob/main/config.txt
+# ☁️ Edit the config file so that it matches exactly the "config.txt" file located in the Bean/RaspberryBean repo.
 sudo nano /boot/firmware/config.txt
 
 # 🎀 Run this to disable the interfaces that could clash with the HyperPixel's DPI bus, then reboot.
@@ -13,7 +15,7 @@ sudo reboot
 
 # 🎀 If everything works you'll see the kernel text on the screen. Yay!
 
-# 🎀 ---------- Sound ----------
+# 🎀🎀 ---------- Sound ---------- 🎀🎀
 
 # 🎀 Speaker: Play ALSA's WAV sample once.
 speaker-test -t wav -c1

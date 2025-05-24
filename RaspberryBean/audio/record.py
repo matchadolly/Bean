@@ -1,8 +1,8 @@
 """
-🎀
+🎀🎀
 Block microphone capture → WAV filepath.
 Audio is recorded, and the function only returns the file path after capture is complete.
-🎀
+🎀🎀
 """
 import sounddevice as sd
 import soundfile as sf

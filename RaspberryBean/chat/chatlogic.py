@@ -1,7 +1,7 @@
 """
-🎀
+🎀🎀
 OpenAI's ChatGPT.
-🎀
+🎀🎀
 """
 from openai import OpenAI
 from utils.logger import log

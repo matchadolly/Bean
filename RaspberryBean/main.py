@@ -1,8 +1,8 @@
 """
-🎀
+🎀🎀
 BEAN'S HEART AND SOUL.
 Run: python ~/Bean/RaspberryBean/main.py
-🎀
+🎀🎀
 """
 #!/usr/bin/env python3
 from utils.logger import log
@@ -36,10 +36,11 @@ def handle_press():
 def main():
     log.info("Bean starting in IDLE")
     on_press(handle_press)
-    # 🎀 Run for ever!
+    # ☁️ Run for ever!
     import signal, time
     while True:
         time.sleep(1)
 
 if __name__ == "__main__":
     main()
+    

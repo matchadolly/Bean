@@ -1,12 +1,12 @@
 """
-🎀
+🎀🎀
 OpenAI's Whisper.
 Sends a WAV file and returns the transcript.
-🎀
+🎀🎀
 """
 from openai import OpenAI
 from utils.logger import log
-from utils.config import *     # loads .env on import
+from utils.config import *  # ☁️ Loads .env on import.
 import os
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))

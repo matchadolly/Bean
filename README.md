@@ -92,7 +92,7 @@ Bean will be a plushie with an animated face displayed by a HyperPixel screen, a
       5. Play sound when finished.
 2. Insert the SD card into your Pi. Connect the active cooler. Connect the Pi to power. A green LED should light for ~20s when the kernel loads. The fan will be VERY loud and you may smell SMOKE and occasionally the LED will turn red but APPARENTLY this is normal. I think. Everything since has been fine. Then the LED idles and stays green and the wifi firmware is loaded.
 3. Set further initial configs. [Code](https://github.com/matchadolly/Bean/blob/main/1%20%E2%80%A2%20Initial%20setup%20configs).
-4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/2%20%E2%80%A2%20Connect%20to%20eduroam).
+4. You may try to connect to eduroam if you want. I FAILED 😭. I shall attempt to do this again later. [HORRIBLE BROEKN Code](https://github.com/matchadolly/Bean/blob/main/2%20%E2%80%A2%20Connect%20to%20eduroam). (Nevermind my crashout was unnecessary, it worked. I just didn't realise it until I got the display running cos I think eduroam has mDNS disabled, even running Avahi won't let me use `ssh bean@bean.local`. You'll have to do it by IP address instead).
 ### 3.2 Putting the components together
 1. You should have inserted the SD card into your Pi and attached the active cooler by now.
 2. HyperPixel: HyperPixel → header, standoffs → Hyperpixel, HyperPixel+header+standoffs → Pi.

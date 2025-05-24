@@ -1,10 +1,10 @@
 """
-🎀
+🎀🎀
 A centralised and colorised logger for Bean!
 To use:
     from utils.logger import log
     log.info("Hello")
-🎀
+🎀🎀
 """
 import logging
 

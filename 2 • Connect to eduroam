@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# 🎀 ---------- Method 1 ----------
+# 🎀🎀 ---------- Method 1 ---------- 🎀🎀
 
 # 🎀 Install dependencies.
 sudo apt install -y python3-pip libpython3-dev libdbus-1-dev python3-dbus network-manager build-essential
 
 # 🎀 Grab the latest eduroam installer.
-# 🎀 If the link doesn't work (ERROR 500: Internal Server Error), go to https://cat.eduroam.org, navigate to the Linux download page for your uni, and get the link in the Network tab in the Web Inspector in Safari.
+# ☁️ If the link doesn't work (ERROR 500: Internal Server Error), go to https://cat.eduroam.org, navigate to the Linux download page for your uni, and get the link in the Network tab in the Web Inspector in Safari.
 wget -L -O eduroam_UoC.py "https://cat.eduroam.org/user/API.php?action=downloadInstaller&lang=en&profile=523&device=linux&generatedfor=user&openroaming=0"
 
 # 🎀 Run it.
@@ -14,7 +14,18 @@ sudo mkdir -p /root/.config
 sudo python3 eduroam_UoC.py
 sudo nmcli connection up eduroam
 
-# 🎀 ---------- Method 2 ----------
+# 🎀 SSH-ing via bean@bean.local doesn't seem to work with eduroam, you will have to use the IP address. I suggest setting a static IP.
+ip route  # ☁️ The IP after "default via" is the router IP. `ip route` also gives the subnet range, choose an IP within that range.
+sudo nano /etc/dhcpcd.conf
+# ☁️ Add this to the "dhcpcd.conf" file.
+interface wlan0
+static ip_address=10.249.70.150/19
+static routers=10.249.95.254
+static domain_name_servers=1.1.1.1 1.0.0.1 # ☁️ Cloudflare DNS.
+# ☁️Then restart the service.
+sudo systemctl restart dhcpcd
+
+# 🎀🎀 ---------- Method 2 ---------- 🎀🎀
 
 # 🎀 Setup.
 sudo nmcli connection add \
